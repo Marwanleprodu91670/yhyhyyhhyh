@@ -1,7 +1,7 @@
 if game.PlaceId == 3101667897 then
     local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
     local Window = OrionLib:MakeWindow({Name = "Lite Hub", HidePremium = false, SaveConfig = true, IntroEnabled = false})
- 
+
     -- Values
     _G.AutoOrbs = false
     _G.SelectOrb = "Red Orb"
@@ -14,7 +14,7 @@ if game.PlaceId == 3101667897 then
     getgenv().AutoHoop = false
     _G.TextBoxValue = ""
     _G.SendInChat = false
- 
+
     -- Functions
     function AutoOrb()
         while _G.AutoOrbs do
@@ -29,7 +29,7 @@ if game.PlaceId == 3101667897 then
             wait(0.25)
         end
     end    
- 
+
     function joinRace()
         while _G.AutoFillRace do
             local args = {
@@ -39,7 +39,7 @@ if game.PlaceId == 3101667897 then
             wait(0.0001) -- Adjusted wait time for performance
         end
     end
- 
+
     function autoHatch()
         while _G.autoHatch do
             local args = {
@@ -50,7 +50,7 @@ if game.PlaceId == 3101667897 then
             wait(0.01) -- Adjusted wait time for performance
         end
     end
- 
+
     function AutoFinishRace()
         while _G.AutoFinishRace do
             local positions = {
@@ -58,10 +58,10 @@ if game.PlaceId == 3101667897 then
                 CFrame.new(48.3109131, 36.3147125, -8680.45312, -1, 0, 0, 0, 1, 0, 0, 0, -1),
                 CFrame.new(1001.33118, 36.3147125, -10986.2178, -0.996191859, 0, -0.0871884301, 0, 1, 0, 0.0871884301, 0, -0.996191859)
             }
- 
+
             local plr = game.Players.LocalPlayer
             local char = plr.Character
- 
+
             if char and char:FindFirstChild("HumanoidRootPart") then
                 for _, cframe in ipairs(positions) do
                     char.HumanoidRootPart.CFrame = cframe
@@ -70,7 +70,7 @@ if game.PlaceId == 3101667897 then
             end
         end
     end
- 
+
     function autoRebirth()
         while _G.autoRebirth do
             local args = {
@@ -80,7 +80,7 @@ if game.PlaceId == 3101667897 then
             wait(0.1)
         end
     end
- 
+
     function SendMessage()
         while _G.SendInChat do
             if _G.TextBoxValue and _G.TextBoxValue ~= "" then
@@ -89,78 +89,78 @@ if game.PlaceId == 3101667897 then
             wait(1.5)
         end
     end
- 
+
     -- Tabs
     local MainTab = Window:MakeTab({
         Name = "Main",
         Icon = "rbxassetid://18840887514",
         PremiumOnly = false
     })
- 
+
     local AutoFarmTab = Window:MakeTab({
         Name = "AutoFarm",
         Icon = "rbxassetid://18841546430",
         PremiumOnly = false
     })
- 
+
     local TeleportsTab = Window:MakeTab({
         Name = "Teleports",
         Icon = "rbxassetid://18840895966",
         PremiumOnly = false
     })
- 
+
     local AutoRaceTab = Window:MakeTab({
         Name = "Auto Race",
         Icon = "rbxassetid://18840911898",
         PremiumOnly = false
     })
- 
+
     local ChatTab = Window:MakeTab({
         Name = "Chat",
         Icon = "rbxassetid://18854016467",
         PremiumOnly = false
     })
- 
+
     local EggsTab = Window:MakeTab({
         Name = "Eggs",
         Icon = "rbxassetid://18840914110",
         PremiumOnly = false
     })
- 
+
     local RebirthTab = Window:MakeTab({
         Name = "Rebirth",
         Icon = "rbxassetid://18842462752",
         PremiumOnly = false
     })
- 
+
     local Tab = Window:MakeTab({
         Name = "Credit",
         Icon = "rbxassetid://18853737625",
         PremiumOnly = false
     })
- 
+
     -- Sections
- 
+
 MainTab:AddSection({
         Name = "Hoops Farming"
     })
- 
+
     Tab:AddSection({
         Name = "Made By Adopt"
     })
- 
+
     Tab:AddSection({
         Name = "Credit to lucky and Cryo for helping me a bit"
     })
- 
+
     Tab:AddSection({
         Name = "Credit to Ras for making showcase video"
     })
- 
+
     Tab:AddSection({
         Name = "Inspiration: Cryo Hub"
     })
- 
+
 --buttons
     TeleportsTab:AddButton({
         Name = "City",
@@ -172,7 +172,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     TeleportsTab:AddButton({
         Name = "Snow City",
         Callback = function()
@@ -183,7 +183,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     TeleportsTab:AddButton({
         Name = "Magma City",
         Callback = function()
@@ -194,7 +194,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     TeleportsTab:AddButton({
         Name = "Legends Highway",
         Callback = function()
@@ -205,7 +205,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     TeleportsTab:AddButton({
         Name = "Space",
         Callback = function()
@@ -216,7 +216,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     TeleportsTab:AddButton({
         Name = "Desert",
         Callback = function()
@@ -227,11 +227,11 @@ MainTab:AddSection({
             end
         end
     })
- 
- 
- 
+
+   
+
     -- Toggle
- 
+
 MainTab:AddToggle({
 	    Name = "Auto Hoop",
 	    Default = false,
@@ -248,12 +248,12 @@ MainTab:AddToggle({
             end)    
 	    end
     })
- 
+
 --section
 MainTab:AddSection({
         Name = "Speed/Jump Settings"
     })
- 
+
     AutoFarmTab:AddToggle({
         Name = "Auto Orbs",
         Default = false,
@@ -264,7 +264,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     AutoRaceTab:AddToggle({
         Name = "Auto Fill Race",
         Default = false,
@@ -275,7 +275,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     EggsTab:AddToggle({
         Name = "Auto Hatch",
         Default = false,
@@ -286,7 +286,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     RebirthTab:AddToggle({
         Name = "Auto Rebirth",
         Default = false,
@@ -297,7 +297,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     AutoRaceTab:AddToggle({
         Name = "Auto Finish Race",
         Default = false,
@@ -308,7 +308,7 @@ MainTab:AddSection({
             end
         end
     })
- 
+
     EggsTab:AddDropdown({
         Name = "Select Egg",
         Default = "Electro Legends Crystal",
@@ -317,7 +317,7 @@ MainTab:AddSection({
             _G.selectEgg = Value
         end
     })
- 
+
     AutoFarmTab:AddDropdown({
         Name = "Select Orb",
         Default = "Red Orb",
@@ -326,7 +326,7 @@ MainTab:AddSection({
             _G.SelectOrb = Value
         end
     })
- 
+
     AutoFarmTab:AddDropdown({
         Name = "Select City",
         Default = "City",
@@ -335,7 +335,7 @@ MainTab:AddSection({
             _G.SelectCity = Value
         end
     })
- 
+
     ChatTab:AddTextbox({
         Name = "Text Box",
         Default = "",
@@ -344,7 +344,7 @@ MainTab:AddSection({
             _G.TextBoxValue = Value
         end
     })
- 
+
     MainTab:AddTextbox({
         Name = "Speed Power",
         Default = "",
@@ -353,7 +353,7 @@ MainTab:AddSection({
             _G.TextBoxValue = Value
         end
     })
- 
+
     MainTab:AddTextbox({
         Name = "Jump Power",
         Default = "",
@@ -362,7 +362,7 @@ MainTab:AddSection({
             _G.TextBoxValue = Value
         end
     })
- 
+
     ChatTab:AddToggle({
         Name = "Send In Chat",
         Default = false,
@@ -373,12 +373,12 @@ MainTab:AddSection({
             end
         end
     })
- 
+
 --section
 local Section = AutoFarmTab:AddSection({
 	Name = "Anti Lags"
 })
- 
+
     -- Buttons
 AutoFarmTab:AddButton({
 	Name = "Anti Ping",
@@ -422,6 +422,6 @@ for i, e in pairs(l:GetChildren()) do
 end
   	end    
 })
- 
- 
+
+
     OrionLib:Init()
